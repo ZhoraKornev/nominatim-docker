@@ -3,6 +3,7 @@ version: '3.7'
 services:
   postgres:
     image: hammermc/nominatim-docker
+    container_name: osm_nominati_postgres
     restart: always
     command: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
     env_file:
@@ -17,6 +18,7 @@ services:
 
   initdb:
     image: hammermc/nominatim-docker
+    container_name: osm_nominati_init_db_service
     restart: on-failure
     depends_on:
       - postgres
@@ -37,6 +39,7 @@ services:
 #  edit apache/local.php for correct update settings
   update:
     image: hammermc/nominatim-docker
+    container_name: osm_nominati_update_service
     restart: unless-stopped
     depends_on:
       - postgres
@@ -56,6 +59,7 @@ services:
 
   apache:
     image: hammermc/nominatim-docker
+    container_name: osm_nominati_apache
     restart: always
     depends_on:
       - initdb
@@ -71,7 +75,7 @@ services:
     tmpfs:
       - /tmp
     ports:
-      - 80:80
+      - 8888:80
 
 
 volumes:
