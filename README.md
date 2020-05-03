@@ -3,12 +3,10 @@
 - hammermc/nominatim-docker:latest dev
 - hammermc/nominatim-docker:release-3.2.0 release-v3.2.0
 
-It works as a standalone nominatim docker container and it should 
-init to a working install, but it requires some tuning and
-configuration changes to suit your environment.
+It works as a standalone nominatim docker container .
+All enviroments tune from dot.env file
 
-See https://github.com/chesty/maps-docker-compose for a full OpenStreetMaps environment
-using this image plus others.
+After compose file you need to create database manually
  
 To keep nominatim updated, start the nominatim-updatedb container every 24 hours.
 

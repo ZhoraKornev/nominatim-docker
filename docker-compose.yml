@@ -6,6 +6,8 @@ services:
     container_name: osm_nominati_postgres
     restart: always
     command: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
+    env_file:
+      - .env
     volumes:
       - data:/data
       - postgres-data:/var/lib/postgresql/data
@@ -24,7 +26,7 @@ services:
       - postgres
     command: nominatim-initdb
     env_file:
-      - osm.env
+      - .env
     environment:
       - REDOWNLOAD
       - REINITDB
@@ -45,7 +47,7 @@ services:
       - postgres
     command: nominatim-updatedb
     env_file:
-      - osm.env
+      - .env
     environment:
       - REDOWNLOAD
       - REINITDB
@@ -64,6 +66,8 @@ services:
     depends_on:
       - initdb
     command: nominatim-apache2
+    env_file:
+      - .env
     volumes:
       - data:/data
       - run:/run

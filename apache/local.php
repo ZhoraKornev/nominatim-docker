@@ -10,9 +10,9 @@
 @define('CONST_Map_Tile_Attribution', ''); // Set if tile source isn't osm.org
 
 // Replication settings
-@define('CONST_Replication_Url', 'https://download.geofabrik.de/europe/bulgaria-updates');
+@define('CONST_Replication_Url', 'http://download.geofabrik.de/europe/monaco-updates');
 @define('CONST_Replication_MaxInterval', '604800');
 @define('CONST_Replication_Update_Interval', '86400');  // How often upstream publishes diffs
 @define('CONST_Replication_Recheck_Interval', '3600'); // How long to sleep if no update found yet
-//@define('CONST_Database_DSN', 'pgsql:host=postgres;port=5342;user=osm_nominatim;password=OSM_pwd123!;dbname=osm_nominatim');
- @define('CONST_Database_DSN', 'pgsql://postgres:OSM_pwd123!@postgres/osm_nominatim');
+//@define('CONST_Database_DSN', 'pgsql:host=postgres;port=5342;user=postgres;password=pwd123;dbname=nominatim');
+// @define('CONST_Database_DSN', 'pgsql://postgres:pwd123@postgres:5324/nominatim');
