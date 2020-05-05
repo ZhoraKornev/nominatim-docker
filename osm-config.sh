@@ -47,3 +47,5 @@ if [ -d /osm-config.d ]; then
         . "$script"
     done
 fi
+
+log "finishing osm-config.sh"
