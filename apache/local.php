@@ -10,7 +10,8 @@
 @define('CONST_Map_Tile_Attribution', ''); // Set if tile source isn't osm.org
 
 // Replication settings
-@define('CONST_Replication_Url', 'http://download.geofabrik.de/australia-oceania/australia-updates/');
+//@define('CONST_Replication_Url', 'http://download.geofabrik.de/europe/monaco-updates');
+@define('CONST_Replication_Url', 'http://download.geofabrik.de/europe-updates');
 @define('CONST_Replication_MaxInterval', '604800');
 @define('CONST_Replication_Update_Interval', '86400');  // How often upstream publishes diffs
 @define('CONST_Replication_Recheck_Interval', '3600'); // How long to sleep if no update found yet
